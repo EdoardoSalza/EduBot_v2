@@ -1,0 +1,8 @@
+# Contenuto per il tuo file requirements.txt
+streamlit
+streamlit-mic-recorder
+google-generativeai
+PyPDF2
+Pillow
+numpy
+nltk

@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap');
+
+/* --- IMPOSTAZIONI GLOBALI --- */
+
+/* 1. UNICA FONTE DI VERITÀ PER LA DIMENSIONE DEL FONT DI BASE */
+/* Impostiamo la dimensione base su 16px, che è lo standard web. 
+   Tutte le altre dimensioni useranno 'rem' per essere relative a questa base. */
+html {
+    font-size: 16px !important; 
+}
+
+/* 2. APPLICA IL FONT A TUTTA L'APP */
+html, body, [class*="st-"], [class*="css-"] {
+    font-family: 'Source Sans 3', sans-serif !important;
+}
+
+/* 3. IMPOSTA LA DIMENSIONE DEI TESTI COMUNI */
+/* Impostiamo il testo standard a 1.1rem (circa 17.6px), rendendolo leggibile. */
+p, [data-testid="stMarkdownContainer"], [data-testid="stCaption"] {
+    font-size: 1.1rem !important;
+    line-height: 1.6;
+}
+
+/* 4. IMPOSTA DIMENSIONI SPECIFICHE PER I TITOLI */
+h1 { font-size: 2.2rem !important; }
+h2 { font-size: 1.8rem !important; }
+h3 { font-size: 1.5rem !important; }
+
+
+/* --- NUOVA SEZIONE: STILI PER LA SIDEBAR --- */
+
+/* Selettore per il contenitore principale della sidebar */
+[data-testid="stSidebar"] {
+    font-size: 1rem !important; /* Applica la dimensione di base a tutta la sidebar (16px) */
+}
+
+/* Selettore per i titoli (es. "Configurazione Modello AI") nella sidebar */
+[data-testid="stSidebar"] h3 {
+    font-size: 1.25rem !important; /* Rende i sottotitoli più grandi e leggibili (20px) */
+}
+
+/* Selettore per le etichette dei widget (es. "Selezione Modello:") */
+[data-testid="stSidebar"] label {
+    font-size: 1rem !important; /* Ingrandisce le etichette (16px) */
+}
+
+/* Selettore per il testo dentro i selectbox e altri widget */
+[data-testid="stSidebar"] .stSelectbox div[data-baseweb="select"] > div,
+[data-testid="stSidebar"] .stTextInput input {
+    font-size: 1rem !important; /* Ingrandisce il testo dentro i widget (16px) */
+}
+
+/* Selettore per il testo informativo (es. la descrizione del modello) */
+[data-testid="stSidebar"] [data-testid="stInfo"] {
+     font-size: 0.95rem !important; /* Leggermente più piccolo per differenziare (15px) */
+}
+
+
+/* --- STILI ESISTENTI (MANTENUTI) --- */
+
+/* Colore bianco per i caratteri nei messaggi della chat */
+[data-testid="stChatMessage"] p {
+    color: var(--text-color) !important;
+}
+
+/* Contenitore principale per la chat */
+.chat-container {
+    max-width: 850px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    margin-top: -1.5rem;
+    padding-bottom: 6rem;
+}
+
+/* Stile per l'icona personalizzata nell'avatar */
+.custom-avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* Ottimizzazione per smartphone */
+@media (max-width: 640px) {
+    .chat-container {
+        padding: 0 0.5rem;
+    }
+}
+
+/* Nasconde elementi dell'interfaccia Streamlit */
+.stAppDeployButton,
+header[data-testid="stHeader"],
+.stMainMenu,
+.stToolbar {
+    display: none;
+}
+
+.stAppViewContainer > .main .block-container {
+    padding-top: 2rem;
+}
+
+/* Stili per i pulsanti */
+.stButton button {
+    width: 100%;
+    padding: 14px 24px;
+    border-radius: 10px;
+    border: 1px solid #cccccc;
+    font-weight: 600;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin: 6px 0;
+}
+
+.stButton button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.stButton button[kind="primary"] {
+    background-color: #1f77b4 !important;
+    color: white !important;
+    border-color: #1f77b4 !important;
+}
+
+.stButton button[kind="primary"]:hover {
+    background-color: #1565c0 !important;
+}
+
+/* Stili per la schermata di benvenuto */
+.welcome-screen {
+    text-align: center;
+    padding: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Textarea per chat */
+[data-testid="stChatInput"] textarea {
+    font-size: 1.1rem !important;
+    padding: 1rem !important;
+}
